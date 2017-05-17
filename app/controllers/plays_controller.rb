@@ -10,6 +10,14 @@ end
 def show
 end
 
+def update
+    if @play.update(play_params)
+        redirect_to play_path(@path)
+    else 
+        render 'new'
+    end
+end
+
 def new
     @play = Play.new
 end
@@ -22,6 +30,11 @@ def create
     else
         render 'new'
     end
+end
+
+def destroy 
+    @play.destroy
+    redirect_to root_path
 end
     
 private
