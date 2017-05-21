@@ -1,5 +1,6 @@
 <h1>List of plays</h1>
 
-<% @plays each do |play| %>
+<% @plays.each do |play| %>
 <h2><%= link_to play.title, play_path(play) %></h2>
-<%= link_to "Add Play", new_play path %>
+<%= link_to "Add Play", new_play_path %>
+<% end %>
